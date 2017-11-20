@@ -1,6 +1,6 @@
 FROM openresty/openresty:latest-xenial
 
-RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-auto-ssl 0.11.0
+RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-auto-ssl 0.11.1
 
 RUN openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -subj '/CN=sni-support-required-for-valid-ssl' -keyout /etc/ssl/resty-auto-ssl-fallback.key -out /etc/ssl/resty-auto-ssl-fallback.crt
 
